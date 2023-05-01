@@ -1,6 +1,8 @@
-from pyrogram import Client
+import asyncio
+from pyrogram import Client, filters, idle
 from config import *
-import libtorrent as lt
+from uvloop import install
+from contextlib import closing, suppress
 
 app = Client(
     "bot",
