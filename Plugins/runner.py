@@ -4,11 +4,12 @@ import time
 import aiohttp
 import requests
 import aiofiles
+from Plugins.utils import b64_to_str
 from pyrogram import Client, filters
 
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
-@autocaption.on_message(filters.command("start") & filters.private)
+@app.on_message(filters.command("start") & filters.private)
 async def start(bot, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
     kay_id = -1001642923224
