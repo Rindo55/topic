@@ -9,7 +9,7 @@ from pyrogram.types import Message, MessageEntity
 from pyrogram.errors import FloodWait
 from base64 import standard_b64encode, standard_b64decode
 
-ef b64_to_str(b64: str) -> str:
+def b64_to_str(b64: str) -> str:
     bytes_b64 = b64.encode('ascii')
     bytes_str = standard_b64decode(bytes_b64)
     __str = bytes_str.decode('ascii')
