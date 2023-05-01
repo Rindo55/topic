@@ -26,4 +26,4 @@ class autocaption(Client):
         )
 
 if __name__ == "__main__" :
-    autocaption().run()
+    app().run()
