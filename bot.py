@@ -12,6 +12,8 @@ app = Client(
   )
 app.start()
 
+loop = asyncio.get_event_loop()
+
 async def start_bot():
   print("==================================")
   print("[INFO]: AutoAnimeBot Started Bot Successfully")
