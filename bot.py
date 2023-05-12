@@ -53,7 +53,7 @@ async def start(bot, cmd: Message):
 async def link(bot, cmd: Message):
     fuk_cmd = cmd.text.replace("/link https://t.me/c/1642923224/", "")
     filex_id = int(str_to_b64(fuk_cmd))
-    sendx = await app.send_message(chat_id=cmd.from_user.id, text=f"https://t.me/somayukibot?start={filex_id})
+    sendx = await app.send_message(chat_id=cmd.from_user.id, text="https://t.me/somayukibot?start=" + filex_id)
 async def start_bot():
   print("==================================")
   print("[INFO]: AutoAnimeBot Started Bot Successfully")
