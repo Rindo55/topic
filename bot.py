@@ -53,7 +53,7 @@ async def start(bot, cmd: Message):
 @app.on_message(filters.command("link") & filters.private)
 
 async def link(bot, cmd: Message):
-    if usr_cmd == "/link":
+    if cmd == "/link":
 
        await cmd.reply_text("Fuck off!")
 
