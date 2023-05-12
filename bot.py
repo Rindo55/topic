@@ -48,12 +48,27 @@ async def start(bot, cmd: Message):
             await app.copy_message(chat_id=cmd.from_user.id, from_chat_id=kay_id, message_id=message_ids)
         except Exception as err:
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `XXXXXXX`")
+            
+            
 @app.on_message(filters.command("link") & filters.private)
 
 async def link(bot, cmd: Message):
-    fuk_cmd = cmd.text.replace("/link https://t.me/c/1642923224/", "")
-    filex_id = str_to_b64(fuk_cmd)
-    sendx = await app.send_message(chat_id=cmd.from_user.id, text="https://t.me/somayukibot?start=animxt_" + filex_id)
+    if usr_cmd == "/link":
+
+       await cmd.reply_text("Fuck off!")
+
+    else: 
+        try:
+
+       
+            fuk_cmd = cmd.text.replace("/link https://t.me/c/1642923224/", "")
+            filex_id = str_to_b64(fuk_cmd)
+            sendx = await app.send_message(chat_id=cmd.from_user.id, text="https://t.me/somayukibot?start=animxt_" + filex_id)
+        except Exception as err:
+            await cmd.reply_text(f"Something went wrong!\n\n**Error:** `XXXXXXX`")
+
+    
+    
 async def start_bot():
   print("==================================")
   print("[INFO]: AutoAnimeBot Started Bot Successfully")
