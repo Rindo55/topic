@@ -21,6 +21,15 @@ def b64_to_str(b64: str) -> str:
     bytes_str = standard_b64decode(bytes_b64)
     __str = bytes_str.decode('ascii')
     return __str
+def str_to_b64(__str: str) -> str:
+
+    str_bytes = __str.encode('ascii')
+
+    bytes_b64 = standard_b64encode(str_bytes)
+
+    b64 = bytes_b64.decode('ascii')
+
+    return b64
 
 @app.on_message(filters.command("start") & filters.private)
 async def start(bot, cmd: Message):
@@ -39,7 +48,12 @@ async def start(bot, cmd: Message):
             await app.copy_message(chat_id=cmd.from_user.id, from_chat_id=kay_id, message_id=message_ids)
         except Exception as err:
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `XXXXXXX`")
+@app.on_message(filters.command("link") & filters.private)
 
+async def link(bot, cmd: Message):
+    fuk_cmd = cmd.text.replace("/link https://t.me/c/1642923224/", "")
+    filex_id = int(str_to_b64(fuk_cmd))
+    sendx = await app.send_message(chat_id=cmd.from_user.id, text=f"https://t.me/somayukibot?start={filex_id})
 async def start_bot():
   print("==================================")
   print("[INFO]: AutoAnimeBot Started Bot Successfully")
