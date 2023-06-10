@@ -1,18 +1,14 @@
-import asyncio
-import re
-from pyrogram import Client, filters, idle
-from config import Config
+import pyrogram
+
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+import os
 
-from uvloop import install
-from contextlib import closing, suppress
-from pyrogram.types import Message, MessageEntity
-from string import ascii_letters, ascii_uppercase, digits
-from base64 import standard_b64encode, standard_b64decode
+from config import Config
+from pyrogram import Client 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 class app(Client):
    
@@ -43,14 +39,6 @@ class app(Client):
 
 
 
-
-def str_to_b64(__str: str) -> str:
-
-    str_bytes = __str.encode('ascii')
-
-    bytes_b64 = standard_b64encode(str_bytes)
-
-    b64 = bytes_b64.decode('ascii')
 
 
     
