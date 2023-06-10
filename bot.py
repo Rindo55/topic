@@ -2,20 +2,38 @@ import asyncio
 import re
 from pyrogram import Client, filters, idle
 from config import *
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+
 from uvloop import install
 from contextlib import closing, suppress
 from pyrogram.types import Message, MessageEntity
 from string import ascii_letters, ascii_uppercase, digits
 from base64 import standard_b64encode, standard_b64decode
-app = Client(
-    "bot",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN
-  )
-app.start()
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
+class autocaption(Client):
+   
 
-loop = asyncio.get_event_loop()
+    def __init__(self):
+        super().__init__(
+
+            session_name="Captioner",
+
+            bot_token = BOT_TOKEN,
+
+            api_id = API_ID,
+
+            api_hash = API_HASH
+
+            )
+
+        )
+
+
+
 def b64_to_str(b64: str) -> str:
     bytes_b64 = b64.encode('ascii')
     bytes_str = standard_b64decode(bytes_b64)
@@ -70,16 +88,7 @@ async def link(bot, cmd: Message):
 
     
     
-async def start_bot():
-  print("==================================")
-  print("[INFO]: AutoAnimeBot Started Bot Successfully")
-  print("==========JOIN @Latest_ongoing_airing_animes=========")
-  
-  await idle()
-  print("[INFO]: BOT STOPPED")
-  await app.stop()  
-  for task in asyncio.all_tasks():
-    task.cancel()
+
 
 if __name__ == "__main__":
-  app.run()
+    autocaption.run()
