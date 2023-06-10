@@ -26,7 +26,7 @@ class app(Client):
 
             api_id = Config.API_ID,
 
-            api_hash = Config.API_HASH
+            api_hash = Config.API_HASH,
             workers = 20,
 
             plugins = dict(
