@@ -91,4 +91,4 @@ async def link(bot, cmd: Message):
 
 
 if __name__ == "__main__":
-    app.run()
+    app().run()
