@@ -14,7 +14,7 @@ from pyrogram.types import Message, MessageEntity
 from string import ascii_letters, ascii_uppercase, digits
 from base64 import standard_b64encode, standard_b64decode
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-class autocaption(Client):
+class app(Client):
    
 
     def __init__(self):
@@ -91,4 +91,4 @@ async def link(bot, cmd: Message):
 
 
 if __name__ == "__main__":
-    autocaption.run()
+    app.run()
