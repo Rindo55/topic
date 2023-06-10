@@ -1,7 +1,7 @@
 import asyncio
 import re
 from pyrogram import Client, filters, idle
-from config import *
+from config import Config
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -22,11 +22,11 @@ class app(Client):
 
             session_name="Captioner",
 
-            bot_token = BOT_TOKEN,
+            bot_token = Config.BOT_TOKEN,
 
-            api_id = API_ID,
+            api_id = Config.API_ID,
 
-            api_hash = API_HASH
+            api_hash = Config.API_HASH
 
             )
 
