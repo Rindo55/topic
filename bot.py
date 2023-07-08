@@ -23,7 +23,7 @@ app = Client(
             api_hash = Config.API_HASH)
 
 
-    return b64
+    
 test="AniwatchZone | Table of Contents.\n\nView the button for the complete set of the **Table of Contents.**"
 repl_markup=InlineKeyboardMarkup(
         [
