@@ -71,7 +71,7 @@ async def start(bot, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
     kay_id = -1001944303479
     rep_id = 31491
-    if usr_cmd == "/start":
+    if usr_cmd == "/send":
        await app.send_message(
                       chat_id=kay_id,
                       text=test,
