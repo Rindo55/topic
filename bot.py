@@ -66,13 +66,13 @@ repl_markup=InlineKeyboardMarkup(
             ],
         ],
     ) 
-@app.on_message(filters.command("send") & filters.private)
+@app.on_message(filters.command("send"))
 async def start(bot, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
     kay_id = -1001944303479
     rep_id = 31491
     if usr_cmd == "/start":
-       await bot.send_message(
+       await app.send_message(
                       chat_id=kay_id,
                       text=test,
                       reply_markup=repl_markup,
