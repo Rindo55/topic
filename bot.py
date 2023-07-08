@@ -65,8 +65,7 @@ repl_markup=InlineKeyboardMarkup(
                 ),
             ],
         ],
-    ),
-)
+    ) 
 @app.on_message(filters.command("send") & filters.private)
 async def start(bot, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
