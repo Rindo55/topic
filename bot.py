@@ -36,7 +36,48 @@ def str_to_b64(__str: str) -> str:
     b64 = bytes_b64.decode('ascii')
 
     return b64
-
+reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                    text="Ani FAQ's",
+                     url=f"https://t.me/c/1944303479/31491/32422",
+                ),
+                InlineKeyboardButton(
+                    text="W2G FAQ's",
+                    url="https://t.me/c/1944303479/31491/32524",
+                ),
+            ],
+             [
+                InlineKeyboardButton(
+                    text="Rules",
+                    url="https://t.me/c/1944303479/31491/32403",
+                ),
+                InlineKeyboardButton(
+                    text="MangaR FAQ's",
+                    url="https://t.me/c/1944303479/31491/32695",
+                ),
+            ],
+            [
+                InlineKeyboardButton(
+                    text="How to Ask Support",
+                                url="https://t.me/c/1944303479/31491/32781",
+                ),
+                    
+                InlineKeyboardButton(
+                    text="Bugs & Suggestions",
+                    url="https://t.me/c/1944303479/31491/32792",
+                ),
+            ],
+            [
+                InlineKeyboardButton(
+                    text="↻ Back to the top",
+                                url="https://t.me/c/1944303479/31491/32398",              
+                ),
+            ],
+        ],
+    ),
+)
 @app.on_message(filters.command("start") & filters.private)
 async def start(bot, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
